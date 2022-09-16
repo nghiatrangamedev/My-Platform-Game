@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - EnemyTurnDirection
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
@@ -40,7 +41,10 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 550295497
+    uniqueID: 2830449523
+    locked: 0
+  - name: Ground
+    uniqueID: 684581983
     locked: 0
   - name: Default
     uniqueID: 0
