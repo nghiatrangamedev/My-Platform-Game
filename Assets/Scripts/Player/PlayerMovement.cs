@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerController))]
 public class PlayerMovement : MonoBehaviour
 {
+
     Rigidbody2D _playerRb;
     float _moveSpeed = 5f;
     bool _isFaceRight = true;
 
     float _jumpForce = 10f;
-    bool _isGrounded;
     // Start is called before the first frame update
     void Start()
     {
         _playerRb = GetComponent<Rigidbody2D>();
     }
 
-   public void Movement(float xDirection)
+    public void Movement(float xDirection)
     {
         // xDirection > 0 when player want to move to the right
         // xDirection < 0 when player want to move to the left
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_isFaceRight)
         {
-            transform.rotation = Quaternion.Euler(0, 0,0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         else
@@ -54,25 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (_isGrounded)
-        {
-            _playerRb.velocity = Vector2.up * _jumpForce;
-        }
+        _playerRb.velocity = Vector2.up * _jumpForce;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _isGrounded = false;
-        }
-    }
 }

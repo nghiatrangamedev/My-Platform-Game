@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Enemy : MonoBehaviour
+public class CrabMovement : MonoBehaviour
 {
-    [SerializeField] GameObject _deathEffect;
     Rigidbody2D _enemyRb;
-    float _enemyHeath = 100f;
     float _speed = 5f;
     bool _isFaceRight;
 
@@ -15,12 +12,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _enemyRb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -47,21 +38,6 @@ public class Enemy : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-    }
-
-    public void TakenDamage(float damage)
-    {
-        _enemyHeath -= damage;
-        if (_enemyHeath <= 0)
-        {
-            Death();
-        }
-    }
-
-    void Death()
-    {
-        Instantiate(_deathEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

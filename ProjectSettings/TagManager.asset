@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - EnemyTurnDirection
+  - Enemy
+  - DeathZone
   layers:
   - Default
   - TransparentFX
