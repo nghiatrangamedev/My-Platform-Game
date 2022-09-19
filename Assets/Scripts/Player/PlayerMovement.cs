@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float _moveSpeed = 5f;
     bool _isFaceRight = true;
 
-    float _jumpForce = 10f;
+    float _jumpForce = 7f;
     // Start is called before the first frame update
     void Start()
     {
