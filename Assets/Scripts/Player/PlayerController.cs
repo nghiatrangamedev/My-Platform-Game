@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] CameraController _cameraController;
     PlayerMovement _playerMovement;
     PlayerAttack _playerAttack;
     PlayerAnimationController _playerAnimationController;
 
-    public float _horizontalInput;
+    float _horizontalInput;
     float _shootRate = 3f;
     float _nextTimeToShoot = 0f;
     bool _isGrounded;
@@ -70,6 +71,19 @@ public class PlayerController : MonoBehaviour
         {
             _isGrounded = false;
             _playerAnimationController.ChangeIsGrounedState(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Second Camera"))
+        {
+            _cameraController.ChangeToSecondCamera();
+        }
+
+        else if (collision.gameObject.CompareTag("Third Camera"))
+        {
+            _cameraController.ChangeToThirdCamera();
         }
     }
 }

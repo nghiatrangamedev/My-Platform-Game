@@ -5,40 +5,24 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform _playerTransform;
-    [SerializeField] GameObject _camera1;
-    [SerializeField] GameObject _camera2;
-    [SerializeField] GameObject _camera3;
-    [SerializeField] GameObject _camera4;
-
+    [SerializeField] GameObject _mainCamera;
+    [SerializeField] GameObject _secondCamera;
+    [SerializeField] GameObject _thirdCamera;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    public void ChangeToSecondCamera()
     {
-        if (_playerTransform.position.y < -6)
-        {
-            ChangeToCamera(_camera1, _camera2);
-        }
-
-        if (_playerTransform.position.y < -23)
-        {
-            ChangeToCamera(_camera2, _camera3);
-        }
-
-        if (_playerTransform.position.y < -40)
-        {
-            ChangeToCamera(_camera3, _camera4);
-        }
+        _mainCamera.SetActive(false);
+        _secondCamera.SetActive(true);
     }
 
-    void ChangeToCamera(GameObject currentCamera, GameObject newCamera)
+    public void ChangeToThirdCamera()
     {
-        currentCamera.SetActive(false);
-        newCamera.SetActive(true);
+        _secondCamera.SetActive(false);
+        _thirdCamera.SetActive(true);
     }
-
 }

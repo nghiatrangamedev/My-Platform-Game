@@ -5,12 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerMovement : MonoBehaviour
 {
-
     Rigidbody2D _playerRb;
     float _moveSpeed = 5f;
     bool _isFaceRight = true;
 
     float _jumpForce = 7f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerRb.velocity = Vector2.up * _jumpForce;
     }
+
+
 
 }

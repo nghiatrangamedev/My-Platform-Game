@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollowing : MonoBehaviour
+public class CameraFollowingByXAxis : MonoBehaviour
 {
     [SerializeField] Transform _playerTransform;
     [SerializeField] float _xOffset;
-    [SerializeField] float _yOffset;
     [SerializeField] float _minBorder;
     [SerializeField] float _maxBorder;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void LateUpdate()
@@ -40,7 +33,4 @@ public class CameraFollowing : MonoBehaviour
 
         transform.position = cameraNewPostion;
     }
-
-    
-
 }

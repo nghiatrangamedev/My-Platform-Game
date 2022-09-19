@@ -8,6 +8,8 @@ TagManager:
   - EnemyTurnDirection
   - Enemy
   - DeathZone
+  - Second Camera
+  - Third Camera
   layers:
   - Default
   - TransparentFX
