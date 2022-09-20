@@ -85,5 +85,10 @@ public class PlayerController : MonoBehaviour
         {
             _cameraController.ChangeToThirdCamera();
         }
+
+        else if (collision.gameObject.CompareTag("Fourth Camera"))
+        {
+            _cameraController.ChangeToFourthCamera();
+        }
     }
 }
