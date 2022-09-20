@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] GameObject _mainCamera;
     [SerializeField] GameObject _secondCamera;
     [SerializeField] GameObject _thirdCamera;
+    [SerializeField] GameObject _fourthCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,11 @@ public class CameraController : MonoBehaviour
     {
         _secondCamera.SetActive(false);
         _thirdCamera.SetActive(true);
+    }
+
+    public void ChangeToFourthCamera()
+    {
+        _thirdCamera.SetActive(false);
+        _fourthCamera.SetActive(true);
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - DeathZone
   - Second Camera
   - Third Camera
+  - Fourth Camera
+  - Door
   layers:
   - Default
   - TransparentFX
