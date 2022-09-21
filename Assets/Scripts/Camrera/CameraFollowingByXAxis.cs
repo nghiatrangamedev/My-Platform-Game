@@ -12,7 +12,11 @@ public class CameraFollowingByXAxis : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        FollowByXDirection();
+        if (_playerTransform != null)
+        {
+            FollowByXDirection();
+        }
+        
     }
 
     void FollowByXDirection()

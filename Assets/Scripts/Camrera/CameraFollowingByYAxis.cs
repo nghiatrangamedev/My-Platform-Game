@@ -8,7 +8,11 @@ public class CameraFollowingByYAxis : MonoBehaviour
 
     private void LateUpdate()
     {
-        FollowByYDirection();
+        if (_playerTransform != null)
+        {
+            FollowByYDirection();
+        }
+        
     }
 
     void FollowByYDirection()
