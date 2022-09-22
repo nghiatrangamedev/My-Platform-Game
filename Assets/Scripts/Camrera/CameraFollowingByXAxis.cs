@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollowingByXAxis : MonoBehaviour
 {
     [SerializeField] Transform _playerTransform;
-    [SerializeField] float _xOffset;
     [SerializeField] float _minBorder;
     [SerializeField] float _maxBorder;
 
@@ -21,7 +20,7 @@ public class CameraFollowingByXAxis : MonoBehaviour
 
     void FollowByXDirection()
     {
-        float xPostion = _playerTransform.position.x + _xOffset;
+        float xPostion = _playerTransform.position.x;
 
         if (xPostion < _minBorder)
         {
