@@ -6,7 +6,6 @@ public class CrabMovement : MonoBehaviour
 {
     Rigidbody2D _enemyRb;
     float _speed = 5f;
-    bool _isFaceRight;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +27,15 @@ public class CrabMovement : MonoBehaviour
 
     void EnemyChangeSide()
     {
-        _isFaceRight = !_isFaceRight;
+        float yLocalRotation = transform.localRotation.y;
 
-        if (_isFaceRight)
+        if (yLocalRotation == 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -45,7 +44,6 @@ public class CrabMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyTurnDirection"))
         {
             EnemyChangeSide();
-
         }
     }
 }

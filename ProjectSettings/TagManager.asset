@@ -12,6 +12,7 @@ TagManager:
   - Third Camera
   - Fourth Camera
   - Door
+  - Stone Trap
   layers:
   - Default
   - TransparentFX

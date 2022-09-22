@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             _playerAnimationController.ChangeToIdleState();
         }
 
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (Input.GetButton("Jump") && _isGrounded)
         {
             _playerMovement.Jump();
             _playerAnimationController.ChangeToJumpState();
