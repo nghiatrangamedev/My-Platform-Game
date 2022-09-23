@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakenDamage(_damage);
+            Instantiate(_destroyBulletEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         if (!collision.gameObject.CompareTag("EnemyTurnDirection"))
